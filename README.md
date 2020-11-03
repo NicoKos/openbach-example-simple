@@ -5,7 +5,7 @@ As one example:
 
 `toto@my-computer:~/Desktop$ ls`
 
-`openbach  openbach-3nuc  openbach-extra`
+`openbach  openbach-example-simple  openbach-extra`
 
 Three NUCs are exploited and the network architecture is showed below.
 

@@ -1,0 +1,20 @@
+nwdiag {
+      default_fontsize = 10;
+        node_width = 140;
+
+network admin {
+
+address = "IP:192.168.1.0/24"
+        openbach-nuc1 [address="192.168.1.41/wlp2s0"];
+        openbach-nuc2 [address="192.168.1.42/wlp2s0"];
+        openbach-ctrl [address="192.168.1.44/wlp2s0"];
+}
+
+network data {
+address = "IP:10.10.0.0/24"
+        openbach-nuc1 [address="10.10.0.1/enp0s25"];
+        openbach-nuc2 [address="10.10.0.2/enp0s25"];
+}
+
+}
+

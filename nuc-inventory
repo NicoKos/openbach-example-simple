@@ -1,5 +1,5 @@
 [controller]
-192.168.3.44 openbach_name=ctlr
+192.168.1.44 openbach_name=ctlr
 
 [agent]
 192.168.1.41 openbach_name=nuc1

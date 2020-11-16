@@ -19,9 +19,11 @@ echo ""
 # Update the repository
 echo "################################################"
 cd openbach/ 
+git checkout dev
 git pull
 cd ../
 cd openbach-extra/
+git checkout dev
 git pull
 cd ../
 echo "################################################"

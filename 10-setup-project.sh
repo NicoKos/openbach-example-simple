@@ -21,7 +21,7 @@ echo "================================="
 cd ../openbach-extra/apis/auditorium_scripts/
 python3 delete_project.py $projectname
 echo " "
-cd ../../../
+cd ../../../openbach-example-simple/
 
 echo "================================="
 echo "Create project"
@@ -29,7 +29,7 @@ echo "================================="
 cd ../openbach-extra/apis/auditorium_scripts/
 python3 create_project.py $projectname
 echo " "
-cd ../../../
+cd ../../../openbach-example-simple/
 
 echo "================================="
 echo "Add entities to project"
@@ -39,7 +39,7 @@ python3 add_entity.py -a $nuc1IP $nuc1 $projectname
 python3 add_entity.py -a $nuc2IP $nuc2 $projectname
 python3 add_entity.py -a $nuc4IP $nuc4 $projectname
 echo " "
-cd ../../../
+cd ../../../openbach-example-simple/
 
 echo "================================="
 echo "Add jobs to entities "

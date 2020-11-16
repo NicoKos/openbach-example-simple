@@ -18,12 +18,18 @@ Based on this, the user can either use the auditorium scripts, the IHM or the pr
 
 If you encounter python-version related errors, we recommend you to either: 
 
-* Use virtual env
-* Update your paths on the installation machine, e.g. 
-  * `vim ~/.bashrc`
-    * add `export PYTHONPATH="$PYTHONPATH:/home/kuhnn/Desktop/openbach-extra/apis"`
-    * add `export PATH="$PATH:/home/kuhnn/.local/bin"`
-  * source ~/.bashrc 
+* On the installation machine
+  * Use virtual env
+  * Update your paths on the installation machine, e.g. 
+    * `vim ~/.bashrc`
+      * add `export PYTHONPATH="$PYTHONPATH:/home/kuhnn/Desktop/openbach-extra/apis"`
+      * add `export PATH="$PATH:/home/kuhnn/.local/bin"`
+    * source ~/.bashrc 
+* On the target machines
+  * Update the PYTHONPATH to use the correct version of python, e.g.
+    * `vim ~/.bashrc`
+      * add `export PYTHONPATH="$PYTHONPATH:/usr/bin/python3"`
+    * source ~/.bashrc 
 
 
 Three NUCs are exploited and the network architecture is showed below.

@@ -103,7 +103,7 @@ def qos_network_global(observer,server_entity,server_ip, \
             7001,
             7000,
             30,
-            '300M',
+            '100M',
             1,
             0,
             1400,

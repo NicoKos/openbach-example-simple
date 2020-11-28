@@ -9,7 +9,7 @@ nuc1IP=192.168.1.41
 nuc2=nuc2
 nuc2IP=192.168.1.42
 
-job_list="ip_route d-itg_recv d-itg_send owamp-server owamp-client hping dashjs_client tc_configure_link histogram time_series web_browsing_qoe nuttcp apache2 voip_qoe_dest voip_qoe_src tcp_conf_linux"
+job_list="ip_route d-itg_recv d-itg_send owamp-server owamp-client hping dashjs_client tc_configure_link histogram time_series web_browsing_qoe nuttcp apache2 voip_qoe_dest voip_qoe_src tcp_conf_linux synchronization"
 
 cd ../openbach-extra/apis/auditorium_scripts/
 
@@ -27,6 +27,12 @@ echo "================================="
 echo "add ip_route"
 echo "================================="
 python3 add_job.py -f ../../../openbach/src/jobs/core_jobs/network/ip_route ip_route
+
+echo "================================="
+echo "add synchronization"
+echo "================================="
+python3 add_job.py -f ../../../openbach/src/jobs/admin_jobs/synchronization synchronization
+
 
 echo "================================="
 echo "add d-itg_recv"

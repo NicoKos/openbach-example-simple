@@ -46,7 +46,7 @@ EP1_IF1="enp0s25"
 EP1_IF1_BD="10M"
 EP1_IF1_DELAY=10
 EP1_IF1_LM="random"
-EP1_IF1_LMP=0
+EP1_IF1_LMP=1
 EP1_IF1_IP="10.10.0.1"
 
 # NUC 2
@@ -56,7 +56,7 @@ EP2_IF1="enp0s25"
 EP2_IF1_BD="20M"
 EP2_IF1_DELAY=20
 EP2_IF1_LM="random"
-EP2_IF1_LMP=0
+EP2_IF1_LMP=2
 EP2_IF1_IP="10.10.0.2"
 
 """ clear all interfaces

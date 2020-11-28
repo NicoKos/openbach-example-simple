@@ -65,15 +65,20 @@ then
 		echo "------------------------------"
 		echo "set limits on interfaces"
 		echo "------------------------------"
-		python3 executor_network_configure_link.py --controller 192.168.1.44 --login openbach --password openbach testobachnuc --entity nuc1 --ifaces enp0s25 --mode egress --operation apply --bandwidth 10M --delay 10 run 
-		python3 executor_network_configure_link.py --controller 192.168.1.44 --login openbach --password openbach testobachnuc --entity nuc2 --ifaces enp0s25 --mode egress --operation apply --bandwidth 20M --delay 20 run
+		python3 executor_network_configure_link.py --controller 192.168.1.44 --login openbach --password openbach testobachnuc --entity nuc1 --ifaces enp0s25 --mode egress --operation apply --bandwidth 10M --lm random --lmp 1 --delay 10 run 
+		python3 executor_network_configure_link.py --controller 192.168.1.44 --login openbach --password openbach testobachnuc --entity nuc2 --ifaces enp0s25 --mode egress --operation apply --bandwidth 20M --lm random --lmp 1 --delay 20 run
 		# This scenario also tests the QoS between the two NUCs using the network_global reference scenario
 		echo "------------------------------"
 		echo "run E2E network global"
 		echo "------------------------------"
-		python3 executor_network_global.py --controller 192.168.1.44 --login openbach --password openbach testobachnuc --server-entity nuc1 --client-entity nuc2 --server-ip 10.10.0.1 --client-ip 10.10.0.2 --rate-limit 100M --post-processing-entity nuc1 run --file time_series figure --data /home/kuhnn/Desktop/results/
-		python3 executor_network_global.py --controller 192.168.1.44 --login openbach --password openbach testobachnuc --server-entity nuc2 --client-entity nuc1 --server-ip 10.10.0.2 --client-ip 10.10.0.1 --rate-limit 100M --post-processing-entity nuc1 run --file time_series figure --data /home/kuhnn/Desktop/results/
+		python3 executor_network_global.py --controller 192.168.1.44 --login openbach --password openbach testobachnuc --server-entity nuc1 --client-entity nuc2 --server-ip 10.10.0.1 --client-ip 10.10.0.2 --rate-limit 100M --loss-measurement --max-synchro-off 20 --post-processing-entity nuc1 run --file time_series figure --data /home/kuhnn/Desktop/results/
+		python3 executor_network_global.py --controller 192.168.1.44 --login openbach --password openbach testobachnuc --server-entity nuc2 --client-entity nuc1 --server-ip 10.10.0.2 --client-ip 10.10.0.1 --rate-limit 100M --loss-measurement --max-synchro-off 20 --post-processing-entity nuc1 run --file time_series figure --data /home/kuhnn/Desktop/results/
 		# run service level tests - will be available on next OpenBACH release 
+		#this is temporary
+		echo "------------------------------"
+		echo "run VoIP"
+		echo "------------------------------"
+		python3 executor_service_voip.py --controller 192.168.1.44 --login openbach --password openbach testobachnuc --server-entity nuc1 --client-entity nuc2 --server-ip 10.10.0.1 --client-ip 10.10.0.2 --max-synchro-off 20 --post-processing-entity nuc1 run --file time_series figure --data /home/kuhnn/Desktop/results/
 
 		# This scenario clears the interfaces of both NUCs on the data path (10.10.0.0/24)
 		echo "------------------------------"

@@ -20,10 +20,13 @@ echo ""
 echo "################################################"
 cd openbach/ 
 git checkout dev
+#git merge origin/synchro_ntp 
+#git merge origin/fix_rstats_job 
 git pull
 cd ../
 cd openbach-extra/
 git checkout dev
+#git merge origin/synchro_ntp
 git pull
 cd ../
 echo "################################################"
@@ -43,6 +46,7 @@ echo ""
 
 echo "################################################"
 echo "Starting installation"
+ansible-playbook -i inventory/nuc-inventory uninstall.yml -u kuhnn -k -K
 ansible-playbook -i inventory/nuc-inventory install.yml -u kuhnn -k -K
 echo "################################################"
 echo ""

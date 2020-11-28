@@ -35,9 +35,8 @@ echo "================================="
 echo "Add entities to project"
 echo "================================="
 cd ../openbach-extra/apis/auditorium_scripts/
-python3 add_entity.py -a $nuc1IP $nuc1 $projectname
-python3 add_entity.py -a $nuc2IP $nuc2 $projectname
-python3 add_entity.py -a $nuc4IP $nuc4 $projectname
+python3 add_entity.py $nuc1 $projectname -a $nuc1IP 
+python3 add_entity.py $nuc2 $projectname -a $nuc2IP
 echo " "
 cd ../../../openbach-example-simple/
 
@@ -58,7 +57,7 @@ do
         l_jobs=$(python3 list_installed_jobs.py $agents)
         echo "---------------------------"
         echo "working on $agents"
-        for job in ip_route d-itg_recv d-itg_send owamp-server owamp-client hping dashjs_client tc_configure_link histogram time_series web_browsing_qoe nuttcp apache2 voip_qoe_dest voip_qoe_src tcp_conf_linux
+        for job in ip_route d-itg_recv d-itg_send owamp-server owamp-client hping dashjs_client tc_configure_link histogram time_series web_browsing_qoe nuttcp apache2 voip_qoe_dest voip_qoe_src tcp_conf_linux synchronization
         do
                 if $installalljobs
                 then

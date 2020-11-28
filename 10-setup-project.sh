@@ -57,7 +57,7 @@ do
         l_jobs=$(python3 list_installed_jobs.py $agents)
         echo "---------------------------"
         echo "working on $agents"
-        for job in ip_route d-itg_recv d-itg_send owamp-server owamp-client hping dashjs_client tc_configure_link histogram time_series web_browsing_qoe nuttcp apache2 voip_qoe_dest voip_qoe_src tcp_conf_linux synchronization
+        for job in ip_route d-itg_recv d-itg_send owamp-server owamp-client hping dashjs_client tc_configure_link histogram time_series web_browsing_qoe nuttcp apache2 voip_qoe_dest voip_qoe_src tcp_conf_linux synchronization tcpdump_pcap pcap_postprocessing kernel_compile
         do
                 if $installalljobs
                 then

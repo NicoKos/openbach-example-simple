@@ -19,14 +19,9 @@ echo ""
 # Update the repository
 echo "################################################"
 cd openbach/ 
-git checkout dev
-#git merge origin/synchro_ntp 
-#git merge origin/fix_rstats_job 
 git pull
 cd ../
 cd openbach-extra/
-git checkout dev
-#git merge origin/synchro_ntp
 git pull
 cd ../
 echo "################################################"

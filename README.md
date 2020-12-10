@@ -40,7 +40,7 @@ Each NUC exploits `Ubuntu 16.04.07 LTS` with the username `kuhnn`
 * The IP addresses on the admin network are fixed through DHCP rules on the Wi-Fi router.
 * The NUC are interconnected through a switch; the IP addresses are fix through the following: 
   * ssh 192.168.1.41 (or 42)
-  * sudo vim /etc/network/interfaces.d/*
+  * sudo vim /etc/network/interfaces
     * add the following: 
       * source /etc/network/interfaces.d/*
   * sudo vim /etc/network/interfaces.d/interface-data-enp0s25

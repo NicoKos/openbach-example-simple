@@ -112,12 +112,12 @@ python3 add_job.py -f ../../../openbach-extra/externals_jobs/stable_jobs/transpo
 echo "================================="
 echo "add tcpdump_pcap"
 echo "================================="
-python3 add_job.py -f ../../../openbach/src/jobs/core_jobs/transport/tcpdump_pcap/tcpdump_pcap tcpdump_pcap 
+python3 add_job.py -f ../../../openbach/src/jobs/core_jobs/transport/tcpdump_pcap tcpdump_pcap 
 
 echo "================================="
 echo "add pcap_postprocessing"
 echo "================================="
-python3 add_job.py -f ../../../openbach/src/jobs/core_jobs/post_processing/pcap_postprocessing pcap_postprocessing pcap_post_processing
+python3 add_job.py -f ../../../openbach/src/jobs/core_jobs/post_processing/pcap_postprocessing pcap_postprocessing
 
 echo "================================="
 echo "add kernel_compile"

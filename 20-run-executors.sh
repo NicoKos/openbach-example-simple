@@ -75,6 +75,7 @@ then
 		python3 executor_network_global.py --controller 192.168.1.44 --login openbach --password openbach testobachnuc --server-entity nuc2 --client-entity nuc1 --server-ip 10.10.0.2 --client-ip 10.10.0.1 --rate-limit 100M --loss-measurement --max-synchro-off 200 --post-processing-entity nuc1 run --file time_series figure --data /home/kuhnn/Desktop/results/
 		# run service level tests - will be available on next OpenBACH release 
 
+
 		# This scenario clears the interfaces of both NUCs on the data path (10.10.0.0/24)
 		echo "------------------------------"
 		echo "clear interfaces"

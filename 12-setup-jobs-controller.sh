@@ -9,7 +9,7 @@ nuc1IP=192.168.1.41
 nuc2=nuc2
 nuc2IP=192.168.1.42
 
-job_list="ip_route d-itg_recv d-itg_send owamp-server owamp-client hping dashjs_client tc_configure_link histogram time_series web_browsing_qoe nuttcp apache2 voip_qoe_dest voip_qoe_src tcp_conf_linux synchronization tcpdump_pcap pcap_postprocessing kernel_compile"
+job_list="ip_route d-itg_recv d-itg_send owamp-server owamp-client hping dashjs_client tc_configure_link histogram time_series web_browsing_qoe nuttcp apache2 voip_qoe_dest voip_qoe_src tcp_conf_linux synchronization tcpdump_pcap pcap_postprocessing kernel_compile quic"
 
 cd ../openbach-extra/apis/auditorium_scripts/
 
@@ -89,10 +89,10 @@ echo "add nuttcp"
 echo "================================="
 python3 add_job.py -f ../../../openbach-extra/externals_jobs/stable_jobs/transport/nuttcp nuttcp 
 
-echo "================================="
-echo "add apache2"
-echo "================================="
-python3 add_job.py -f ../../../openbach/src/jobs/core_jobs/service/apache2 apache2
+#echo "================================="
+#echo "add apache2"
+#echo "================================="
+#python3 add_job.py -f ../../../openbach/src/jobs/core_jobs/service/apache2 apache2
 
 echo "================================="
 echo "add voip_qoe_dest"
@@ -123,6 +123,12 @@ echo "================================="
 echo "add kernel_compile"
 echo "================================="
 python3 add_job.py -f ../../../openbach/src/jobs/admin_jobs/kernel_compile kernel_compile 
+
+echo "================================="
+echo "add quic"
+echo "================================="
+python3 add_job.py -f ../../../openbach-extra/externals_jobs/stable_jobs/service/quic quic 
+
 
 
 

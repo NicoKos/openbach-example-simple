@@ -15,7 +15,8 @@ then
 	echo "'both' for test using custom and reference scenarios"
 	exit 1
 fi
-  
+ 
+cp 31-* ../openbach-extra/executors/examples/
 cd ../openbach-extra/executors/examples/
 
 if [[ $CHOICE = "tcp" ]] || [[ $CHOICE = "both" ]]
@@ -29,14 +30,16 @@ then
 
 fi 
 
-if [[ $CHOICE = "ref" ]] || [[ $CHOICE = "both" ]]
+if [[ $CHOICE = "quic" ]] || [[ $CHOICE = "both" ]]
 then
 	echo "##################################################################"
 	echo "Test using reference scenarios"
 	echo "##################################################################"
-
-
-	echo " "
+	#python3 31-quic_configure_link.py --controller 192.168.1.44 --login openbach --password openbach testobachnuc --bandwidth-server-to-client 10M --bandwidth-client-to-server 5M --delay-server-to-client 10 --delay-client-to-server 20 --up-iface enp0s25 --down-iface enp0s25 --server nuc1 --server-ip 10.10.0.1 --server-implementation picoquic --client nuc2 --client-implementation picoquic --resources 1M_file.txt --download-dir /tmp/download --server-log-dir /tmp/server_log --server-extra-args TBD --client-log-dir /tmp/client_log --client-extra-args TBD --nb-runs 1 --pcaps-dir /tmp/pcaps --report-dir /tmp/report --post-processing-entity nuc1 run --data /home/kuhnn/Desktop/results_quic
+	python3 31-quic_configure_link.py --controller 192.168.1.44 --login openbach --password openbach testobachnuc --bandwidth-server-to-client 10M --bandwidth-client-to-server 5M --delay-server-to-client 10 --delay-client-to-server 20 --up-iface enp0s25 --down-iface enp0s25 --server nuc1 --server-ip 10.10.0.1 --server-implementation picoquic --client nuc2 --client-implementation picoquic --resources 1M_file.txt --download-dir /tmp/download --server-log-dir /tmp/server_log --client-log-dir /tmp/client_log --nb-runs 1 --pcaps-dir /tmp/pcaps --report-dir /tmp/report --post-processing-entity nuc1 run --data /home/kuhnn/Desktop/results_quic
+ 	echo " "
 
 fi
+
+
 

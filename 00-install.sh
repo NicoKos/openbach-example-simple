@@ -20,10 +20,8 @@ echo ""
 echo "################################################"
 cd openbach/ 
 git pull
-git checkout dev
 cd ../
 cd openbach-extra/
-git checkout dev
 git pull
 cd ../
 echo "################################################"
